@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { @apply h-full overflow-hidden antialiased font-sans; }
+  #app       { @apply h-full flex flex-col bg-gray-50; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl
+           bg-nhs-blue text-white font-semibold text-base
+           active:bg-nhs-blue-dark disabled:opacity-50 transition-colors;
+  }
+  .btn-secondary {
+    @apply w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl
+           border-2 border-nhs-blue text-nhs-blue font-semibold text-base
+           active:bg-blue-50 disabled:opacity-50 transition-colors;
+  }
+  .input {
+    @apply block w-full rounded-xl border border-gray-300 px-4 py-3 text-base bg-white
+           placeholder-gray-400 focus:border-nhs-blue focus:outline-none focus:ring-2 focus:ring-nhs-blue/20;
+  }
+  .card  { @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-4; }
+  .badge { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold; }
+  .badge-blue  { @apply badge bg-blue-100 text-nhs-blue; }
+  .badge-green { @apply badge bg-green-100 text-nhs-green; }
+  .badge-amber { @apply badge bg-amber-100 text-amber-700; }
+  .badge-red   { @apply badge bg-red-100 text-nhs-red; }
+  .badge-gray  { @apply badge bg-gray-100 text-gray-600; }
+  /* Safe area padding for notch/home indicator */
+  .safe-top    { padding-top: env(safe-area-inset-top); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
